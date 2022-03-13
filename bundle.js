@@ -367,14 +367,25 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+function _classPrivateMethodInitSpec(obj, privateSet) { _checkPrivateRedeclaration(obj, privateSet); privateSet.add(obj); }
+
+function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+
+function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
 
 
+
+
+
+var _generateSearchParams = /*#__PURE__*/new WeakSet();
 
 var Search = /*#__PURE__*/function () {
   function Search() {
     var _this = this;
 
     (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Search);
+
+    _classPrivateMethodInitSpec(this, _generateSearchParams);
 
     this.keyword = '';
     this.nextPageToken = '';
@@ -432,7 +443,7 @@ var Search = /*#__PURE__*/function () {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.prev = 0;
-                _constants__WEBPACK_IMPORTED_MODULE_7__.SEARCH_API.URL.search = this.generateSearchParams(keyword);
+                _constants__WEBPACK_IMPORTED_MODULE_7__.SEARCH_API.URL.search = _classPrivateMethodGet(this, _generateSearchParams, _generateSearchParams2).call(this, keyword);
                 _context2.next = 4;
                 return (0,_utils__WEBPACK_IMPORTED_MODULE_6__.fetchData)(_constants__WEBPACK_IMPORTED_MODULE_7__.SEARCH_API.URL);
 
@@ -470,14 +481,6 @@ var Search = /*#__PURE__*/function () {
       return fetchVideo;
     }()
   }, {
-    key: "generateSearchParams",
-    value: function generateSearchParams(keyword) {
-      return new URLSearchParams(_objectSpread(_objectSpread({}, _constants__WEBPACK_IMPORTED_MODULE_7__.SEARCH_API.PARAMS), {}, {
-        pageToken: this.nextPageToken,
-        q: keyword
-      })).toString();
-    }
-  }, {
     key: "preprocessor",
     value: function preprocessor(videos) {
       return videos.items.map(function (item) {
@@ -494,6 +497,13 @@ var Search = /*#__PURE__*/function () {
 
   return Search;
 }();
+
+function _generateSearchParams2(keyword) {
+  return new URLSearchParams(_objectSpread(_objectSpread({}, _constants__WEBPACK_IMPORTED_MODULE_7__.SEARCH_API.PARAMS), {}, {
+    pageToken: this.nextPageToken,
+    q: keyword
+  })).toString();
+}
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
 
