@@ -400,9 +400,9 @@ var Search = /*#__PURE__*/function () {
     (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)({
       selector: '.search-form',
       eventName: '@search',
-      handler: function handler(e) {
+      handler: (0,_utils__WEBPACK_IMPORTED_MODULE_6__.throttle)(function (e) {
         return _this.search('search', e.detail.keyword);
-      },
+      }, 500),
       component: (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-form')
     });
     (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)({
