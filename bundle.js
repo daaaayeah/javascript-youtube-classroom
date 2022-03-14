@@ -391,10 +391,10 @@ var Search = /*#__PURE__*/function () {
 
     this.keyword = '';
     this.nextPageToken = '';
-    (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)('form', '@search', function (e) {
+    (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)('.search-form', '@search', function (e) {
       return _this.search('search', e.detail.keyword);
     }, (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-form'));
-    (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)('ul', '@scroll', function () {
+    (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)('.video-list', '@scroll', function () {
       return _this.search('scroll');
     }, (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result'));
   }
@@ -413,7 +413,7 @@ var Search = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 keyword = _args.length > 1 && _args[1] !== undefined ? _args[1] : this.keyword;
-                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('ul', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).insertSkeleton();
+                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('.video-list', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).insertSkeleton();
                 _context.next = 4;
                 return this.fetchVideo(keyword);
 
@@ -636,7 +636,7 @@ var SearchForm = /*#__PURE__*/function (_CustomElement) {
     value: function setEvent() {
       var _this = this;
 
-      (0,_utils__WEBPACK_IMPORTED_MODULE_6__.addEvent)(this, 'submit', 'form', function (e) {
+      (0,_utils__WEBPACK_IMPORTED_MODULE_6__.addEvent)(this, 'submit', '.search-form', function (e) {
         return _this.emitEvent(e);
       });
     }
@@ -645,7 +645,7 @@ var SearchForm = /*#__PURE__*/function (_CustomElement) {
     value: function emitEvent(e) {
       e.preventDefault();
       var keyword = (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('#search-input-keyword').value;
-      (0,_utils__WEBPACK_IMPORTED_MODULE_6__.emit)('form', '@search', {
+      (0,_utils__WEBPACK_IMPORTED_MODULE_6__.emit)('.search-form', '@search', {
         keyword: keyword
       }, this);
     }
@@ -809,13 +809,13 @@ var SearchResult = /*#__PURE__*/function (_CustomElement) {
     key: "showNoResult",
     value: function showNoResult() {
       (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)('.search-result--no-result').classList.remove('hidden');
-      (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)('ul', this).classList.add('hidden');
+      (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)('.video-list', this).classList.add('hidden');
     }
   }, {
     key: "showResult",
     value: function showResult() {
       (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)('.search-result--no-result').classList.add('hidden');
-      (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)('ul', this).classList.remove('hidden');
+      (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)('.video-list', this).classList.remove('hidden');
     }
   }]);
 
@@ -1087,8 +1087,8 @@ __webpack_require__.r(__webpack_exports__);
 var TEMPLATE = {
   MY_CLASSROOM: "\n    <main id=\"app\" class=\"classroom-container\">\n      <h1 class=\"classroom-container__title\">\uD83D\uDC69\uD83C\uDFFB\u200D\uD83D\uDCBB \uB098\uB9CC\uC758 \uC720\uD29C\uBE0C \uAC15\uC758\uC2E4 \uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBB</h1>\n      <nav class=\"nav\">\n        <button id=\"search-modal-button\" class=\"button nav__button\">\uD83D\uDD0D \uAC80\uC0C9</button>\n      </nav>\n    </main>\n  ",
   SEARCH_MODAL: "\n    <div class=\"modal-container hide\">\n      <div class=\"dimmer\"></div>\n      <div class=\"search-modal\" role=\"dialog\" aria-labelledby=\"search-modal-title\">\n        <h2 id=\"search-modal-title\" class=\"search-modal__title\">\uD83D\uDD0D \uBCF4\uACE0\uC2F6\uC740 \uC601\uC0C1 \uCC3E\uAE30 \uD83D\uDD0D</h2>\n        <search-form></search-form>\n        <search-result></search-result>\n      </div>\n    </div>\n  ",
-  SEARCH_FORM: "\n    <form>\n      <h3 hidden>\uAC80\uC0C9\uC5B4 \uC785\uB825</h3>\n      <input\n        id=\"search-input-keyword\"\n        placeholder=\"\uAC80\uC0C9\"\n        class=\"search-input__keyword\"\n        required\n      />\n      <button id=\"search-button\" class=\"search-input__search-button button\">\uAC80\uC0C9</button>\n    </form>\n  ",
-  SEARCH_RESULT: "\n    <h3 hidden>\uAC80\uC0C9 \uACB0\uACFC</h3>\n    <ul is=\"video-list\"></ul>\n    <section class=\"search-result search-result--no-result hidden\">\n      <h3 hidden>\uAC80\uC0C9 \uACB0\uACFC</h3>\n      <div class=\"no-result\">\n        <img src=".concat(_assets_images_not_found_png__WEBPACK_IMPORTED_MODULE_0__["default"], " alt=\"no result image\" class=\"no-result__image\">\n        <p class=\"no-result__description\">\n          \uAC80\uC0C9 \uACB0\uACFC\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4<br />\n          \uB2E4\uB978 \uD0A4\uC6CC\uB4DC\uB85C \uAC80\uC0C9\uD574\uBCF4\uC138\uC694\n        </p>\n      </div>\n    </section>\n  "),
+  SEARCH_FORM: "\n    <form class=\"search-form\">\n      <h3 hidden>\uAC80\uC0C9\uC5B4 \uC785\uB825</h3>\n      <input\n        id=\"search-input-keyword\"\n        placeholder=\"\uAC80\uC0C9\"\n        class=\"search-input__keyword\"\n        required\n      />\n      <button id=\"search-button\" class=\"search-input__search-button button\">\uAC80\uC0C9</button>\n    </form>\n  ",
+  SEARCH_RESULT: "\n    <h3 hidden>\uAC80\uC0C9 \uACB0\uACFC</h3>\n    <ul is=\"video-list\" class=\"video-list\"></ul>\n    <section class=\"search-result search-result--no-result hidden\">\n      <h3 hidden>\uAC80\uC0C9 \uACB0\uACFC</h3>\n      <div class=\"no-result\">\n        <img src=".concat(_assets_images_not_found_png__WEBPACK_IMPORTED_MODULE_0__["default"], " alt=\"no result image\" class=\"no-result__image\">\n        <p class=\"no-result__description\">\n          \uAC80\uC0C9 \uACB0\uACFC\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4<br />\n          \uB2E4\uB978 \uD0A4\uC6CC\uB4DC\uB85C \uAC80\uC0C9\uD574\uBCF4\uC138\uC694\n        </p>\n      </div>\n    </section>\n  "),
   generateVideoItem: function generateVideoItem(video) {
     return "\n      <li class=\"video-item\" data-video-id=\"".concat(video.id, "\">\n        <img\n          src=\"").concat(decodeURI(video.thumbnail), "\"\n          alt=\"video-item-thumbnail\" class=\"video-item__thumbnail\">\n        <h4 class=\"video-item__title\">").concat(decodeURI(video.title), "</h4>\n        <p class=\"video-item__channel-name\">").concat(decodeURI(video.channelTitle), "</p>\n        <p class=\"video-item__published-date\">").concat((0,_utils__WEBPACK_IMPORTED_MODULE_1__.formatDate)(video.publishedAt), "</p>\n        <button id=\"").concat(video.id, "-save-button\" class=\"video-item__save-button button\">\u2B07 \uC800\uC7A5</button>\n      </li>\n    ");
   },
