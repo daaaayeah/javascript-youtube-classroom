@@ -36,25 +36,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function _classPrivateMethodInitSpec(obj, privateSet) { _checkPrivateRedeclaration(obj, privateSet); privateSet.add(obj); }
-
 function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
 
 function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
-function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
 
 var _videos = /*#__PURE__*/new WeakMap();
 
 var _subscribers = /*#__PURE__*/new WeakMap();
 
-var _setVideos = /*#__PURE__*/new WeakSet();
-
 var VideoStore = /*#__PURE__*/function () {
   function VideoStore() {
     (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, VideoStore);
-
-    _classPrivateMethodInitSpec(this, _setVideos);
 
     _classPrivateFieldInitSpec(this, _videos, {
       writable: true,
@@ -77,7 +69,7 @@ var VideoStore = /*#__PURE__*/function () {
     value: function dispatch(action, data) {
       var newVideos = [].concat((0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(this.getVideos()), (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data));
 
-      _classPrivateMethodGet(this, _setVideos, _setVideos2).call(this, newVideos);
+      (0,_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_4__["default"])(this, _videos, newVideos);
 
       (0,_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_5__["default"])(this, _subscribers).forEach(function (subscriber) {
         subscriber.notify(action, data);
@@ -108,10 +100,6 @@ var VideoStore = /*#__PURE__*/function () {
 
   return VideoStore;
 }();
-
-function _setVideos2(newVideos) {
-  (0,_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_4__["default"])(this, _videos, newVideos);
-}
 
 (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(VideoStore, "_instance", null);
 
@@ -247,26 +235,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function _classPrivateMethodInitSpec(obj, privateSet) { _checkPrivateRedeclaration(obj, privateSet); privateSet.add(obj); }
-
 function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
 
 function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
-
-function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
 
 
 
 
 var _videos = /*#__PURE__*/new WeakMap();
 
-var _setVideos = /*#__PURE__*/new WeakSet();
-
 var Save = /*#__PURE__*/function () {
   function Save() {
     (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Save);
-
-    _classPrivateMethodInitSpec(this, _setVideos);
 
     _classPrivateFieldInitSpec(this, _videos, {
       writable: true,
@@ -302,7 +282,7 @@ var Save = /*#__PURE__*/function () {
           videoId: videoId
         }])));
 
-        _classPrivateMethodGet(this, _setVideos, _setVideos2).call(this);
+        (0,_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_5__["default"])(this, _videos, this.loadVideos());
       } catch (error) {
         alert(error.message);
       }
@@ -332,10 +312,6 @@ var Save = /*#__PURE__*/function () {
 
   return Save;
 }();
-
-function _setVideos2() {
-  (0,_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_5__["default"])(this, _videos, this.loadVideos());
-}
 
 (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(Save, "_instance", null);
 
