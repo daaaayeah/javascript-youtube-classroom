@@ -408,9 +408,9 @@ var Search = /*#__PURE__*/function () {
     (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)({
       selector: '.video-list',
       eventName: '@scroll',
-      handler: function handler() {
+      handler: (0,_utils__WEBPACK_IMPORTED_MODULE_6__.throttle)(function () {
         return _this.search('scroll');
-      },
+      }),
       component: (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')
     });
   }
@@ -1152,7 +1152,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "emit": () => (/* binding */ emit),
 /* harmony export */   "fetchData": () => (/* binding */ fetchData),
 /* harmony export */   "formatDate": () => (/* binding */ formatDate),
-/* harmony export */   "on": () => (/* binding */ on)
+/* harmony export */   "on": () => (/* binding */ on),
+/* harmony export */   "throttle": () => (/* binding */ throttle)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
 /* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
@@ -1266,6 +1267,18 @@ var formatDate = function formatDate(dateString) {
   var month = date.getMonth() + 1;
   var day = date.getDate();
   return "".concat(year, "\uB144 ").concat(month, "\uC6D4 ").concat(day, "\uC77C");
+}; // eslint-disable-next-line max-lines-per-function
+
+var throttle = function throttle(callback) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+  var timerId;
+  return function (event) {
+    if (timerId) return;
+    timerId = setTimeout(function () {
+      callback(event);
+      timerId = null;
+    }, delay, event);
+  };
 };
 
 /***/ }),
