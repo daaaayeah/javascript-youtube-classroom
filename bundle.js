@@ -413,17 +413,18 @@ var Search = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 keyword = _args.length > 1 && _args[1] !== undefined ? _args[1] : this.keyword;
-                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('.video-list', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).insertSkeleton();
-                _context.next = 4;
+                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('.video-list', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).resetResult(type);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('.video-list', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).insertSkeleton(type);
+                _context.next = 5;
                 return this.fetchVideo(keyword);
 
-              case 4:
+              case 5:
                 videos = _context.sent;
                 this.keyword = keyword;
                 this.nextPageToken = (_videos$nextPageToken = videos.nextPageToken) !== null && _videos$nextPageToken !== void 0 ? _videos$nextPageToken : '';
                 _VideoStore__WEBPACK_IMPORTED_MODULE_5__["default"].instance.dispatch(type, this.preprocessor(videos));
 
-              case 8:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -946,6 +947,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _domains_Save__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../domains/Save */ "./src/js/domains/Save.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
 /* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../templates */ "./src/js/templates.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
 
 
 
@@ -956,6 +958,7 @@ __webpack_require__.r(__webpack_exports__);
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
 
 
 
@@ -1010,24 +1013,22 @@ var VideoList = /*#__PURE__*/function (_HTMLUListElement) {
   }, {
     key: "notify",
     value: function notify(type, data) {
-      if (type === 'search') {
-        this.resetResult();
-        this.scrollTop = 0;
-      }
-
       this.removeSkeleton();
       this.insertVideoItems(data);
       this.hideStoredVideoSaveButton(data);
     }
   }, {
     key: "resetResult",
-    value: function resetResult() {
+    value: function resetResult(type) {
+      if (type === 'scroll') return;
       this.textContent = '';
+      this.scrollTop = 0;
     }
   }, {
     key: "insertSkeleton",
-    value: function insertSkeleton() {
-      this.insertAdjacentHTML('beforeend', _templates__WEBPACK_IMPORTED_MODULE_9__["default"].SKELETON.repeat(10));
+    value: function insertSkeleton(type) {
+      var position = type === 'search' ? 'afterbegin' : 'beforeend';
+      this.insertAdjacentHTML(position, _templates__WEBPACK_IMPORTED_MODULE_9__["default"].SKELETON.repeat(_constants__WEBPACK_IMPORTED_MODULE_10__.VIDEO.MAX_RESULT_PER_SEARCH));
     }
   }, {
     key: "removeSkeleton",
