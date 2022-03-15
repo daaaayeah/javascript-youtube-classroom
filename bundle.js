@@ -888,7 +888,7 @@ var VideoItem = /*#__PURE__*/function (_CustomElement) {
   }, {
     key: "template",
     value: function template(video) {
-      return "\n      <li class=\"video-item\" data-video-id=\"".concat(video.id, "\">\n        <img\n          src=\"").concat(decodeURI(video.thumbnail), "\"\n          alt=\"video-item-thumbnail\" class=\"video-item__thumbnail\">\n        <h4 class=\"video-item__title\">").concat(decodeURI(video.title), "</h4>\n        <p class=\"video-item__channel-name\">").concat(decodeURI(video.channelTitle), "</p>\n        <p class=\"video-item__published-date\">").concat((0,_utils__WEBPACK_IMPORTED_MODULE_8__.formatDate)(video.publishedAt), "</p>\n        <button id=\"").concat(video.id, "-save-button\" class=\"video-item__save-button button\">\u2B07 \uC800\uC7A5</button>\n      </li>\n    ");
+      return "\n      <li class=\"video-item\" data-video-id=\"".concat(video.id, "\">\n        <img\n          src=\"").concat(decodeURI(video.thumbnail), "\"\n          alt=\"video-item-thumbnail\" class=\"video-item__thumbnail\">\n        <h4 class=\"video-item__title\">").concat(decodeURI(video.title), "</h4>\n        <p class=\"video-item__channel-name\">").concat(decodeURI(video.channelTitle), "</p>\n        <p class=\"video-item__published-date\">").concat((0,_utils__WEBPACK_IMPORTED_MODULE_8__.formatDate)(video.publishedAt), "</p>\n        <button type=\"button\" id=\"").concat(video.id, "-save-button\" class=\"video-item__save-button button\">\u2B07 \uC800\uC7A5</button>\n      </li>\n    ");
     }
   }, {
     key: "setEvent",
