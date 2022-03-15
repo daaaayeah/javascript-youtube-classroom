@@ -429,7 +429,8 @@ var Search = /*#__PURE__*/function () {
       }
 
       return search;
-    }()
+    }() // eslint-disable-next-line max-lines-per-function
+
   }, {
     key: "fetchVideo",
     value: function () {
@@ -460,10 +461,11 @@ var Search = /*#__PURE__*/function () {
               case 10:
                 _context2.prev = 10;
                 _context2.t0 = _context2["catch"](0);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('.video-list', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).removeSkeleton();
                 alert(_context2.t0.message);
                 return _context2.abrupt("return", _context2.t0);
 
-              case 14:
+              case 15:
               case "end":
                 return _context2.stop();
             }
