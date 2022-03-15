@@ -405,7 +405,7 @@ var Search = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 keyword = _args.length > 1 && _args[1] !== undefined ? _args[1] : this.keyword;
-                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('.video-list', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).resetResult(type);
+                (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result').showResult();
                 (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('.video-list', (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-result')).insertSkeleton(type);
                 _context.next = 5;
                 return this.fetchVideo(keyword);
@@ -805,10 +805,7 @@ var SearchResult = /*#__PURE__*/function (_CustomElement) {
 
       if (data.length === 0) {
         this.showNoResult();
-        return;
       }
-
-      this.showResult();
     }
   }, {
     key: "showNoResult",
@@ -1025,17 +1022,15 @@ var VideoList = /*#__PURE__*/function (_HTMLUListElement) {
       this.hideStoredVideoSaveButton(data);
     }
   }, {
-    key: "resetResult",
-    value: function resetResult(type) {
-      if (type === 'scroll') return;
-      this.textContent = '';
-      this.scrollTop = 0;
-    }
-  }, {
     key: "insertSkeleton",
     value: function insertSkeleton(type) {
-      var position = type === 'search' ? 'afterbegin' : 'beforeend';
-      this.insertAdjacentHTML(position, _templates__WEBPACK_IMPORTED_MODULE_10__["default"]);
+      if (type === 'scroll') {
+        this.insertAdjacentHTML('beforeend', _templates__WEBPACK_IMPORTED_MODULE_10__["default"]);
+        return;
+      }
+
+      this.innerHTML = _templates__WEBPACK_IMPORTED_MODULE_10__["default"];
+      this.scrollTop = 0;
     }
   }, {
     key: "removeSkeleton",
