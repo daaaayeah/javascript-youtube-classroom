@@ -304,9 +304,9 @@ var Search = /*#__PURE__*/function () {
     (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)({
       selector: '.search-form',
       eventName: '@search',
-      handler: (0,_utils__WEBPACK_IMPORTED_MODULE_6__.throttle)(function (e) {
+      handler: (0,_utils__WEBPACK_IMPORTED_MODULE_6__.debounce)(function (e) {
         return _this.search('search', e.detail.keyword);
-      }, 500),
+      }),
       component: (0,_utils__WEBPACK_IMPORTED_MODULE_6__.$)('search-form')
     });
     (0,_utils__WEBPACK_IMPORTED_MODULE_6__.on)({
@@ -1625,6 +1625,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "$": () => (/* binding */ $),
 /* harmony export */   "$$": () => (/* binding */ $$),
 /* harmony export */   "addEvent": () => (/* binding */ addEvent),
+/* harmony export */   "debounce": () => (/* binding */ debounce),
 /* harmony export */   "emit": () => (/* binding */ emit),
 /* harmony export */   "fetchData": () => (/* binding */ fetchData),
 /* harmony export */   "formatDate": () => (/* binding */ formatDate),
@@ -1743,10 +1744,18 @@ var formatDate = function formatDate(dateString) {
   var month = date.getMonth() + 1;
   var day = date.getDate();
   return "".concat(year, "\uB144 ").concat(month, "\uC6D4 ").concat(day, "\uC77C");
+};
+var debounce = function debounce(callback) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  var timerId;
+  return function (event) {
+    if (timerId) clearTimeout(timerId);
+    timerId = setTimeout(callback, delay, event);
+  };
 }; // eslint-disable-next-line max-lines-per-function
 
 var throttle = function throttle(callback) {
-  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
   var timerId;
   return function (event) {
     if (timerId) return;
