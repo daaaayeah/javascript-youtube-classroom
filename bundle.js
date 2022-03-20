@@ -485,12 +485,14 @@ var Watch = /*#__PURE__*/function () {
     key: "watchVideo",
     value: function watchVideo(videoId) {
       var videos = _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_2__["default"].instance.getVideos();
-      videos.forEach(function (video) {
+      var newVideos = videos.map(function (video) {
         if (video.details.id === videoId) {
           video.isWatched = !video.isWatched;
         }
+
+        return video;
       });
-      _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_2__["default"].instance.dispatch(videos);
+      _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_2__["default"].instance.dispatch(newVideos);
     }
   }]);
 
