@@ -321,8 +321,6 @@ var Search = /*#__PURE__*/function () {
     key: "search",
     value: function () {
       var _search = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_4___default().mark(function _callee(type) {
-        var _videos$nextPageToken;
-
         var keyword,
             videos,
             _args = arguments;
@@ -348,8 +346,8 @@ var Search = /*#__PURE__*/function () {
 
               case 8:
                 this.keyword = keyword;
-                this.nextPageToken = (_videos$nextPageToken = videos.nextPageToken) !== null && _videos$nextPageToken !== void 0 ? _videos$nextPageToken : '';
-                _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_5__["default"].instance.dispatch(type, this.preprocessor(videos));
+                this.nextPageToken = videos.nextPageToken;
+                _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_5__["default"].instance.dispatch(type, this.removeDuplicateVideos(this.preprocessor(videos)));
 
               case 11:
               case "end":
@@ -413,6 +411,16 @@ var Search = /*#__PURE__*/function () {
 
       return fetchVideo;
     }()
+  }, {
+    key: "removeDuplicateVideos",
+    value: function removeDuplicateVideos(videos) {
+      var storeVideoIds = _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_5__["default"].instance.getVideos().map(function (video) {
+        return video.id;
+      });
+      return videos.filter(function (video) {
+        return !storeVideoIds.includes(video.id);
+      });
+    }
   }, {
     key: "preprocessor",
     value: function preprocessor(videos) {
