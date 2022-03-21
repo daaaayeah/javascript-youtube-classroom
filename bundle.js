@@ -414,11 +414,11 @@ var Search = /*#__PURE__*/function () {
   }, {
     key: "removeDuplicateVideos",
     value: function removeDuplicateVideos(videos) {
-      var storeVideoIds = _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_5__["default"].instance.getVideos().map(function (video) {
+      var searchStoreVideoIds = _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_5__["default"].instance.getVideos().map(function (video) {
         return video.id;
       });
       return videos.filter(function (video) {
-        return !storeVideoIds.includes(video.id);
+        return !searchStoreVideoIds.includes(video.id);
       });
     }
   }, {
@@ -749,8 +749,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_helpers_wrapNativeSuper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ "./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js");
 /* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
-/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../templates */ "./src/js/templates.js");
-/* harmony import */ var _MyVideoItem__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./MyVideoItem */ "./src/js/elements/MyVideoItem.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../templates */ "./src/js/templates.js");
+/* harmony import */ var _MyVideoItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./MyVideoItem */ "./src/js/elements/MyVideoItem.js");
 
 
 
@@ -762,6 +763,7 @@ __webpack_require__.r(__webpack_exports__);
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
 
 
 
@@ -783,25 +785,50 @@ var MyVideoList = /*#__PURE__*/function (_HTMLUListElement) {
 
     _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_7__["default"].instance.subscribe((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
     return _this;
-  } // eslint-disable-next-line max-lines-per-function
-
+  }
 
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(MyVideoList, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       if (_stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_7__["default"].instance.getVideos().length === 0) {
-        this.innerHTML = _templates__WEBPACK_IMPORTED_MODULE_8__.EMPTY_MY_VIDEOS;
+        this.innerHTML = _templates__WEBPACK_IMPORTED_MODULE_9__.EMPTY_MY_VIDEOS;
         return;
       }
 
       var targetMenu = this.dataset.menu;
       var videos = targetMenu === 'watched' ? _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_7__["default"].instance.getWatchedVideos() : _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_7__["default"].instance.getPlaylistVideos();
-      this.innerHTML = '';
-      videos.forEach(function (video) {
-        _this2.insertAdjacentHTML('beforeend', "<my-video-item data-menu=\"".concat(targetMenu, "\" data-id=").concat(video.details.id, "></my-video-item>"));
+      var myStoreVideoIds = videos.map(function (video) {
+        return video.details.id;
       });
+      this.addVideoItems(targetMenu, myStoreVideoIds);
+      this.removeVideoItem(targetMenu, myStoreVideoIds);
+    }
+  }, {
+    key: "addVideoItems",
+    value: function addVideoItems(targetMenu, myStoreVideoIds) {
+      var _this2 = this;
+
+      var myVideoitemIds = (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$$)('my-video-item', (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)(".".concat(targetMenu, "-videos-container"))).map(function (item) {
+        return item.dataset.id;
+      });
+      var targetVideoIds = myStoreVideoIds.filter(function (id) {
+        return !myVideoitemIds.includes(id);
+      });
+      targetVideoIds.forEach(function (id) {
+        _this2.insertAdjacentHTML('beforeend', "<my-video-item data-menu=\"".concat(targetMenu, "\" data-id=").concat(id, "></my-video-item>"));
+      });
+    }
+  }, {
+    key: "removeVideoItem",
+    value: function removeVideoItem(targetMenu, myStoreVideoIds) {
+      var myVideoitemIds = (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$$)('my-video-item', (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)(".".concat(targetMenu, "-videos-container"))).map(function (item) {
+        return item.dataset.id;
+      });
+      var targetVideoId = myVideoitemIds.find(function (id) {
+        return !myStoreVideoIds.includes(id);
+      });
+      if (!targetVideoId) return;
+      (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)("[data-id=\"".concat(targetVideoId, "\"]"), (0,_utils__WEBPACK_IMPORTED_MODULE_8__.$)(".".concat(targetMenu, "-videos-container"))).remove();
     }
   }, {
     key: "notify",
