@@ -215,8 +215,7 @@ var Save = /*#__PURE__*/function () {
       },
       component: videoItem
     });
-  } // eslint-disable-next-line max-lines-per-function
-
+  }
 
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Save, [{
     key: "saveVideo",
@@ -291,7 +290,6 @@ function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(
 var _generateSearchParams = /*#__PURE__*/new WeakSet();
 
 var Search = /*#__PURE__*/function () {
-  // eslint-disable-next-line max-lines-per-function
   function Search() {
     var _this = this;
 
@@ -366,8 +364,7 @@ var Search = /*#__PURE__*/function () {
       }
 
       return search;
-    }() // eslint-disable-next-line max-lines-per-function
-
+    }()
   }, {
     key: "fetchVideo",
     value: function () {
@@ -549,11 +546,9 @@ var MyClassroom = /*#__PURE__*/function (_CustomElement) {
 
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(MyClassroom, [{
     key: "template",
-    value: // eslint-disable-next-line max-lines-per-function
-    function template() {
+    value: function template() {
       return "\n      <main id=\"app\" class=\"classroom-container\">\n        <h1 class=\"classroom-container__title\">\uD83D\uDC69\uD83C\uDFFB\u200D\uD83D\uDCBB \uB098\uB9CC\uC758 \uC720\uD29C\uBE0C \uAC15\uC758\uC2E4 \uD83D\uDC68\uD83C\uDFFB\u200D\uD83D\uDCBB</h1>\n        <nav class=\"nav\">\n          <div class=\"menu\">\n            <input type=\"radio\" id=\"playlist-videos-menu\" name=\"nav__menu\" value=\"playlist-videos-menu\" checked></input>\n            <label for=\"playlist-videos-menu\" class=\"nav__playlist-videos-menu\">\uD83D\uDC41\uFE0F \uBCFC \uC601\uC0C1</label>\n            <input type=\"radio\" id=\"watched-videos-menu\" name=\"nav__menu\" value=\"watched-videos-menu\"></input>\n            <label for=\"watched-videos-menu\" class=\"nav__watched-videos-menu\">\u2705 \uBCF8 \uC601\uC0C1</label>\n          </div>\n          <button type=\"button\" id=\"search-modal-button\" class=\"button nav__button\">\uD83D\uDD0D \uAC80\uC0C9</button>\n        </nav>\n        <my-videos></my-videos>\n      </main>\n    ";
-    } // eslint-disable-next-line max-lines-per-function
-
+    }
   }, {
     key: "setEvent",
     value: function setEvent() {
@@ -1091,8 +1086,7 @@ var SearchResult = /*#__PURE__*/function (_CustomElement) {
       (0,_babel_runtime_helpers_get__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(SearchResult.prototype), "connectedCallback", this).call(this);
 
       _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_6__["default"].instance.subscribe(this);
-    } // eslint-disable-next-line max-lines-per-function
-
+    }
   }, {
     key: "template",
     value: function template() {
@@ -1754,8 +1748,7 @@ var debounce = function debounce(callback) {
     if (timerId) clearTimeout(timerId);
     timerId = setTimeout(callback, delay, event);
   };
-}; // eslint-disable-next-line max-lines-per-function
-
+};
 var throttle = function throttle(callback) {
   var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
   var timerId;
