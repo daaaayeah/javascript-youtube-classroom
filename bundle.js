@@ -526,7 +526,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
-/* harmony import */ var _MyVideos__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./MyVideos */ "./src/js/elements/MyVideos.js");
+/* harmony import */ var _MyVideo_MyVideos__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./MyVideo/MyVideos */ "./src/js/elements/MyVideo/MyVideos.js");
 
 
 
@@ -606,10 +606,10 @@ customElements.define('my-classroom', MyClassroom);
 
 /***/ }),
 
-/***/ "./src/js/elements/MyVideoItem.js":
-/*!****************************************!*\
-  !*** ./src/js/elements/MyVideoItem.js ***!
-  \****************************************/
+/***/ "./src/js/elements/MyVideo/MyVideoItem.js":
+/*!************************************************!*\
+  !*** ./src/js/elements/MyVideo/MyVideoItem.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -622,11 +622,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
-/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
-/* harmony import */ var _domains_Watch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../domains/Watch */ "./src/js/domains/Watch.js");
-/* harmony import */ var _domains_Delete__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../domains/Delete */ "./src/js/domains/Delete.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
+/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
+/* harmony import */ var _domains_Watch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../domains/Watch */ "./src/js/domains/Watch.js");
+/* harmony import */ var _domains_Delete__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../domains/Delete */ "./src/js/domains/Delete.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
 
 
 
@@ -730,10 +730,10 @@ customElements.define('my-video-item', MyVideoItem);
 
 /***/ }),
 
-/***/ "./src/js/elements/MyVideoList.js":
-/*!****************************************!*\
-  !*** ./src/js/elements/MyVideoList.js ***!
-  \****************************************/
+/***/ "./src/js/elements/MyVideo/MyVideoList.js":
+/*!************************************************!*\
+  !*** ./src/js/elements/MyVideo/MyVideoList.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -748,10 +748,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_helpers_wrapNativeSuper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ "./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js");
-/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
-/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../templates */ "./src/js/templates.js");
-/* harmony import */ var _MyVideoItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./MyVideoItem */ "./src/js/elements/MyVideoItem.js");
+/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../templates */ "./src/js/templates.js");
+/* harmony import */ var _MyVideoItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./MyVideoItem */ "./src/js/elements/MyVideo/MyVideoItem.js");
 
 
 
@@ -847,10 +847,10 @@ customElements.define('my-video-list', MyVideoList, {
 
 /***/ }),
 
-/***/ "./src/js/elements/MyVideos.js":
-/*!*************************************!*\
-  !*** ./src/js/elements/MyVideos.js ***!
-  \*************************************/
+/***/ "./src/js/elements/MyVideo/MyVideos.js":
+/*!*********************************************!*\
+  !*** ./src/js/elements/MyVideo/MyVideos.js ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -863,8 +863,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
-/* harmony import */ var _MyVideoList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./MyVideoList */ "./src/js/elements/MyVideoList.js");
+/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
+/* harmony import */ var _MyVideoList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./MyVideoList */ "./src/js/elements/MyVideo/MyVideoList.js");
 
 
 
@@ -904,10 +904,10 @@ customElements.define('my-videos', MyVideos);
 
 /***/ }),
 
-/***/ "./src/js/elements/SearchForm.js":
-/*!***************************************!*\
-  !*** ./src/js/elements/SearchForm.js ***!
-  \***************************************/
+/***/ "./src/js/elements/SearchVideo/SearchForm.js":
+/*!***************************************************!*\
+  !*** ./src/js/elements/SearchVideo/SearchForm.js ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -920,8 +920,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
 
 
 
@@ -989,10 +989,10 @@ customElements.define('search-form', SearchForm);
 
 /***/ }),
 
-/***/ "./src/js/elements/SearchModal.js":
-/*!****************************************!*\
-  !*** ./src/js/elements/SearchModal.js ***!
-  \****************************************/
+/***/ "./src/js/elements/SearchVideo/SearchModal.js":
+/*!****************************************************!*\
+  !*** ./src/js/elements/SearchVideo/SearchModal.js ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1005,10 +1005,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
-/* harmony import */ var _SearchForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SearchForm */ "./src/js/elements/SearchForm.js");
-/* harmony import */ var _SearchResult__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SearchResult */ "./src/js/elements/SearchResult.js");
+/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+/* harmony import */ var _SearchForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SearchForm */ "./src/js/elements/SearchVideo/SearchForm.js");
+/* harmony import */ var _SearchResult__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SearchResult */ "./src/js/elements/SearchVideo/SearchResult.js");
 
 
 
@@ -1065,10 +1065,10 @@ customElements.define('search-modal', SearchModal);
 
 /***/ }),
 
-/***/ "./src/js/elements/SearchResult.js":
-/*!*****************************************!*\
-  !*** ./src/js/elements/SearchResult.js ***!
-  \*****************************************/
+/***/ "./src/js/elements/SearchVideo/SearchResult.js":
+/*!*****************************************************!*\
+  !*** ./src/js/elements/SearchVideo/SearchResult.js ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1082,11 +1082,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../stores/SearchVideoStore */ "./src/js/stores/SearchVideoStore.js");
-/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
-/* harmony import */ var _assets_images_not_found_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/images/not_found.png */ "./src/assets/images/not_found.png");
-/* harmony import */ var _SearchVideoList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SearchVideoList */ "./src/js/elements/SearchVideoList.js");
+/* harmony import */ var _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../stores/SearchVideoStore */ "./src/js/stores/SearchVideoStore.js");
+/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+/* harmony import */ var _assets_images_not_found_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../assets/images/not_found.png */ "./src/assets/images/not_found.png");
+/* harmony import */ var _SearchVideoList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SearchVideoList */ "./src/js/elements/SearchVideo/SearchVideoList.js");
 
 
 
@@ -1158,10 +1158,10 @@ customElements.define('search-result', SearchResult);
 
 /***/ }),
 
-/***/ "./src/js/elements/SearchVideoItem.js":
-/*!********************************************!*\
-  !*** ./src/js/elements/SearchVideoItem.js ***!
-  \********************************************/
+/***/ "./src/js/elements/SearchVideo/SearchVideoItem.js":
+/*!********************************************************!*\
+  !*** ./src/js/elements/SearchVideo/SearchVideoItem.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1174,12 +1174,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stores/SearchVideoStore */ "./src/js/stores/SearchVideoStore.js");
-/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
-/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
-/* harmony import */ var _domains_Save__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../domains/Save */ "./src/js/domains/Save.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+/* harmony import */ var _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../stores/SearchVideoStore */ "./src/js/stores/SearchVideoStore.js");
+/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
+/* harmony import */ var _abstract_CustomElement__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../abstract/CustomElement */ "./src/js/abstract/CustomElement.js");
+/* harmony import */ var _domains_Save__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../domains/Save */ "./src/js/domains/Save.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
 
 
 
@@ -1266,10 +1266,10 @@ customElements.define('search-video-item', SearchVideoItem);
 
 /***/ }),
 
-/***/ "./src/js/elements/SearchVideoList.js":
-/*!********************************************!*\
-  !*** ./src/js/elements/SearchVideoList.js ***!
-  \********************************************/
+/***/ "./src/js/elements/SearchVideo/SearchVideoList.js":
+/*!********************************************************!*\
+  !*** ./src/js/elements/SearchVideo/SearchVideoList.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1284,11 +1284,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_helpers_wrapNativeSuper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ "./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js");
-/* harmony import */ var _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../stores/SearchVideoStore */ "./src/js/stores/SearchVideoStore.js");
-/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
-/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../templates */ "./src/js/templates.js");
-/* harmony import */ var _SearchVideoItem__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SearchVideoItem */ "./src/js/elements/SearchVideoItem.js");
+/* harmony import */ var _stores_SearchVideoStore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../stores/SearchVideoStore */ "./src/js/stores/SearchVideoStore.js");
+/* harmony import */ var _stores_MyVideoStore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../stores/MyVideoStore */ "./src/js/stores/MyVideoStore.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+/* harmony import */ var _templates__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../templates */ "./src/js/templates.js");
+/* harmony import */ var _SearchVideoItem__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SearchVideoItem */ "./src/js/elements/SearchVideo/SearchVideoItem.js");
 
 
 
@@ -4049,7 +4049,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _elements_MyClassroom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elements/MyClassroom */ "./src/js/elements/MyClassroom.js");
-/* harmony import */ var _elements_SearchModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./elements/SearchModal */ "./src/js/elements/SearchModal.js");
+/* harmony import */ var _elements_SearchVideo_SearchModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./elements/SearchVideo/SearchModal */ "./src/js/elements/SearchVideo/SearchModal.js");
 /* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
 /* harmony import */ var _domains_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./domains/Search */ "./src/js/domains/Search.js");
 
